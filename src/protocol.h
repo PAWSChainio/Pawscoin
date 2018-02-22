@@ -240,6 +240,18 @@ extern const char *GETBLOCKTXN;
  * @since protocol version 70014 as described by BIP 152
  */
 extern const char *BLOCKTXN;
+/**
+ * Contains a PetRecordRequest
+ * Peer should respond with "petrcrd" message.
+ * @since 2017-11-06
+ */
+extern const char *GETPETRCRD;
+/**
+ * Contains a PetRecord.
+ * Sent in response to a "getpetrcrd" message.
+ * @since 2017-11-06
+ */
+extern const char *PETRCRD;
 };
 
 /* Get a vector of all valid message types (see above) */

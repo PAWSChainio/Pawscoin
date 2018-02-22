@@ -1672,7 +1672,10 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     LogPrintf("mapBlockIndex.size() = %u\n",   mapBlockIndex.size());
     LogPrintf("nBestHeight = %d\n",                   chainActive.Height());
     if (gArgs.GetBoolArg("-listenonion", DEFAULT_LISTEN_ONION))
-        StartTorControl(threadGroup, scheduler);
+    {
+      LogPrintf("TorControl DISABLED! \n");
+//      StartTorControl(threadGroup, scheduler);
+    }
 
     Discover(threadGroup);
 
