@@ -2,7 +2,7 @@ OpenBSD build guide
 ======================
 (updated for OpenBSD 6.2)
 
-This guide describes how to build litecoind and command-line utilities on OpenBSD.
+This guide describes how to build pawscoind and command-line utilities on OpenBSD.
 
 OpenBSD is most commonly used as a server OS, so this guide does not contain instructions for building the GUI.
 
@@ -18,7 +18,7 @@ pkg_add automake # (select highest version, e.g. 1.15)
 pkg_add python # (select highest version, e.g. 3.6)
 pkg_add boost
 
-git clone https://github.com/litecoin-project/litecoin.git
+git clone https://github.com/PAWSChainio/Pawscoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -26,7 +26,7 @@ See [dependencies.md](dependencies.md) for a complete overview.
 GCC
 -------
 
-The default C++ compiler that comes with OpenBSD 6.2 is g++ 4.2.1. This version is old (from 2007), and is not able to compile the current version of Litecoin Core because it has no C++11 support. We'll install a newer version of GCC:
+The default C++ compiler that comes with OpenBSD 6.2 is g++ 4.2.1. This version is old (from 2007), and is not able to compile the current version of Pawscoin Core because it has no C++11 support. We'll install a newer version of GCC:
 
 ```bash
  pkg_add g++
@@ -43,8 +43,8 @@ You cannot use the BerkeleyDB library from ports, for the same reason as boost a
 
 ```bash
 # Pick some path to install BDB to, here we create a directory within the litecoin directory
-LITECOIN_ROOT=$(pwd)
-BDB_PREFIX="${LITECOIN_ROOT}/db4"
+PAWSCOIN_ROOT=$(pwd)
+BDB_PREFIX="${PAWSCOIN_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -76,7 +76,7 @@ The change will only affect the current shell and processes spawned by it. To
 make the change system-wide, change `datasize-cur` and `datasize-max` in
 `/etc/login.conf`, and reboot.
 
-### Building Litecoin Core
+### Building Pawscoin Core
 
 **Important**: use `gmake`, not `make`. The non-GNU `make` will exit with a horrible error.
 

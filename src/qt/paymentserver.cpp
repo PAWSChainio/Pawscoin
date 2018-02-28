@@ -52,9 +52,9 @@ const QString BITCOIN_IPC_PREFIX("litecoin:");
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char* BIP71_MIMETYPE_PAYMENT = "application/litecoin-payment";
-const char* BIP71_MIMETYPE_PAYMENTACK = "application/litecoin-paymentack";
-const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/litecoin-paymentrequest";
+const char* BIP71_MIMETYPE_PAYMENT = "application/pawscoin-payment";
+const char* BIP71_MIMETYPE_PAYMENTACK = "application/pawscoin-paymentack";
+const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/pawscoin-paymentrequest";
 
 struct X509StoreDeleter {
       void operator()(X509_STORE* b) {
@@ -78,7 +78,7 @@ namespace // Anon namespace
 //
 static QString ipcServerName()
 {
-    QString name("LitecoinQt");
+    QString name("PawscoinQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -451,7 +451,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Litecoin address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Pawscoin address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;

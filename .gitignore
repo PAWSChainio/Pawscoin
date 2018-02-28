@@ -2,12 +2,12 @@
 
 *.exe
 src/litecoin
-src/litecoind
-src/litecoin-cli
-src/litecoin-tx
-src/test/test_litecoin
-src/test/test_litecoin_fuzzy
-src/qt/test/test_litecoin-qt
+src/pawscoind
+src/pawscoin-cli
+src/pawscoin-tx
+src/test/test_pawscoin
+src/test/test_pawscoin_fuzzy
+src/qt/test/test_pawscoin-qt
 
 # autoreconf
 Makefile.in
@@ -74,12 +74,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-litecoin-qt
-Litecoin-Qt.app
+pawscoin-qt
+Pawscoin-Qt.app
 
 # Unit-tests
 Makefile.test
-litecoin-qt_test
+pawscoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -92,7 +92,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_litecoin.coverage/
+test_pawscoin.coverage/
 total.coverage/
 coverage_percent.txt
 

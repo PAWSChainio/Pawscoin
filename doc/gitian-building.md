@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a Gitian build of Litecoin Core using a Debian VM or physical system.*
+*Setup instructions for a Gitian build of Pawscoin Core using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the Litecoin
+Gitian is the deterministic build process that is used to build the Pawscoin
 Core executables. It provides a way to be reasonably sure that the
 executables are really built from the source on GitHub. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to litecoin.org.
+to pawschain.io.
 
 More independent Gitian builders are needed, which is why this guide exists.
 It is preferred you follow these steps yourself instead of using someone else's
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing Gitian](#installing-gitian)
 - [Setting up the Gitian image](#setting-up-the-gitian-image)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building Litecoin Core](#building-litecoin-core)
+- [Building Pawscoin Core](#building-litecoin-core)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -314,7 +314,7 @@ Clone the git repositories for litecoin and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/litecoin-project/litecoin
+git clone https://github.com/PAWSChainio/Pawscoin
 git clone https://github.com/litecoin-project/gitian.sigs.ltc.git
 ```
 
@@ -349,10 +349,10 @@ manual intervention. Also optionally follow the next step: 'Seed the Gitian sour
 and offline git repositories' which will fetch the remaining files required for building
 offline.
 
-Building Litecoin Core
+Building Pawscoin Core
 ----------------
 
-To build Litecoin Core (for Linux, OS X and Windows) just follow the steps under 'perform
+To build Pawscoin Core (for Linux, OS X and Windows) just follow the steps under 'perform
 Gitian builds' in [doc/release-process.md](release-process.md#perform-gitian-builds) in the litecoin repository.
 
 This may take some time as it will build all the dependencies needed for each descriptor.
@@ -372,7 +372,7 @@ Output from `gbuild` will look something like
     remote: Total 57959 (delta 0), reused 0 (delta 0), pack-reused 57958
     Receiving objects: 100% (57959/57959), 53.76 MiB | 484.00 KiB/s, done.
     Resolving deltas: 100% (41590/41590), done.
-    From https://github.com/litecoin-project/litecoin
+    From https://github.com/PAWSChainio/Pawscoin
     ... (new tags, new branch etc)
     --- Building for trusty amd64 ---
     Stopping target if it is up
@@ -448,7 +448,7 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/litecoin-project/litecoin-detached-sigs.git
+git clone https://github.com/PAWSChainio/Pawscoin-detached-sigs.git
 
 BTCPATH=/some/root/path/litecoin
 SIGPATH=/some/root/path/litecoin-detached-sigs
